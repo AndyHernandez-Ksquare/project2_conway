@@ -23,7 +23,7 @@ Please use this format for your User Stories assignations
 
 # Live demo
 
-Please include here a link to your [live demo](url_here_please)
+Please include here a link to your [live demo](https://andyhernandez-ksquare.github.io/project2_conway/)
 
 # Requeriments
 
