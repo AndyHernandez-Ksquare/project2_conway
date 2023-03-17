@@ -7,6 +7,7 @@ const generations = document.querySelector(".generation");
 const resetButton = document.querySelector(".reset");
 const choosePattern = document.querySelector(".pattern");
 
+
 // Get canvas element and its context
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
@@ -23,6 +24,7 @@ let pause = false;
 let gameStarted = false;
 let iteration = 0; //Counter of generations
 let intervalID;
+
 
 //Creating grid object column x rows
 let grid = new Array(columns);
@@ -49,6 +51,7 @@ const drawGrid = () => {
       ctx.beginPath();
       ctx.rect(j * cellSize, i * cellSize, cellSize, cellSize);
       ctx.fillStyle = grid[i][j] ? "#893b86" : "black"; // Set the color based on state (alive/dead)
+
       ctx.fill();
       ctx.stroke();
     }
@@ -111,6 +114,7 @@ const resetFunc = () => {
   gameStarted = false;
 };
 
+
 //Drawing initial grid
 initGrid();
 drawGrid();
@@ -138,6 +142,7 @@ startButton.addEventListener("click", () => {
     clearInterval(intervalID);
   }
   sound.play()
+
   gameStarted = true;
   // Start the game
   intervalID = setInterval(() => {
@@ -163,11 +168,13 @@ pauseButton.addEventListener("click", () => {
 
   }
 
+
 });
 
 // Clear the board (nuclear bomb)
 clearButton.addEventListener("click", () => {
   choosePattern.value = "none"; // Reseting dropdown menu
+
   //Clearing grid (generation count continues)
   initGrid();
   drawGrid();
@@ -177,6 +184,7 @@ clearButton.addEventListener("click", () => {
 randomizeButton.addEventListener("click", () => {
   if (!gameStarted && !pause) {
     choosePattern.value = "none"; // Reseting dropdown menu
+
     // Loop through each cell and randomize values
     for (let i = 0; i < columns; i++) {
       for (let j = 0; j < rows; j++) {
