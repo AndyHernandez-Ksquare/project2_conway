@@ -17,8 +17,8 @@ const columns = 30;
 const cellSize = canvas.width / rows;
 
 // Relevant variables
-const sound = new Audio('/fsm-team-escp-space-floating.mp3')
-sound.volume=0.2
+const sound = new Audio("/fsm-team-escp-space-floating.mp3");
+sound.volume = 0.2;
 let pause = false;
 let gameStarted = false;
 let iteration = 0; //Counter of generations
@@ -101,7 +101,7 @@ const countNeighbors = (x, y) => {
 const resetFunc = () => {
   // Reset all variables needed
   // Reset audio file
-  sound.pause()
+  sound.pause();
   sound.currentTime = 0;
   initGrid();
   drawGrid();
@@ -137,7 +137,7 @@ startButton.addEventListener("click", () => {
   if (intervalID) {
     clearInterval(intervalID);
   }
-  sound.play()
+  sound.play();
   gameStarted = true;
   // Start the game
   intervalID = setInterval(() => {
@@ -154,15 +154,15 @@ startButton.addEventListener("click", () => {
 // Button to pause the game
 pauseButton.addEventListener("click", () => {
   if (gameStarted) {
-    if(!pause){ //Checking the state of the pause to pause or continue music
-      sound.pause()
-    pause = !pause;} else {
-      sound.play()
-      pause = !pause
+    if (!pause) {
+      //Checking the state of the pause to pause or continue music
+      sound.pause();
+      pause = !pause;
+    } else {
+      sound.play();
+      pause = !pause;
     }
-
   }
-
 });
 
 // Clear the board (nuclear bomb)
